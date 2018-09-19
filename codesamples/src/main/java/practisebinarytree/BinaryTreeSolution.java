@@ -25,8 +25,11 @@ class BinaryTree {
 	}
 
 	public int maxsumPath(Node node) {
-		if (node == null) {
+		/*if (node == null) {
 			return 0;
+		}*/
+		if(node.left == null && node.right == null){
+			return node.val;
 		}
 		int left = maxsumPath(node.left);
 		int right = maxsumPath(node.right);
