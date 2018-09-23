@@ -1,0 +1,11 @@
+static void rotateArray(int n, int d int[] arr){
+        for(int i=0; i<d; i++){
+            int[] result_arr = new int[n];
+            for(int j=0; j<n-1; j++){
+                result_arr[j] = arr[j+1]; 
+            }
+            result_arr[j+1] = arr[i];
+            arr = result_arr;
+        }
+        System.out.println(arr);
+    }
