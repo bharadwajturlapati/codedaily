@@ -1,34 +1,34 @@
 package binarytrees;
 
 public class BinaryTree {
+	public Node root;
+	public int max_sum_result;
 
-	Node root;
-
-	public static void main(String[] args) {
-		BinaryTree binaryTree = new BinaryTree();
-		binaryTree.root = new Node(10);
-		binaryTree.root.left = new Node(1);
-		binaryTree.root.right = new Node(15);
-		binaryTree.inorderTraversal(binaryTree.root);
-	}
-
-	public void inorderTraversal(Node node) {
-		if(node != null){
-			inorderTraversal(node.left);
-			System.out.println(node.data);
-			inorderTraversal(node.right);
+	public void inordertraversal(Node node) {
+		if (node != null) {
+			inordertraversal(node.left);
+			System.out.println(node.val);
+			inordertraversal(node.right);
 		}
-		
 	}
 
-}
-
-class Node {
-	int data;
-	Node left;
-	Node right;
-
-	public Node(int data) {
-		this.data = data;
+	public int maxsumPath(Node node) {
+		if (node == null) {
+			return 0;
+		}
+		if(node.left == null && node.right == null){
+			return node.val;
+		}
+		//checking if i am regressing max _result;
+		System.out.println(node.val);
+		int left = maxsumPath(node.left);
+		int right = maxsumPath(node.right);
+		// check max of left or right
+		int maxofleftright = left > right ? left : right;
+		// check max of node 
+		
+		int maxofnodewithleftright = maxofleftright + node.val > node.val ? maxofleftright + node.val : node.val;
+		
+		return maxofnodewithleftright;
 	}
 }
