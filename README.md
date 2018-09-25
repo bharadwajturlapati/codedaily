@@ -3,4 +3,4 @@
 Hacker Rank Solutions,
 Code Samples
 
-#test commi
+#test commit
