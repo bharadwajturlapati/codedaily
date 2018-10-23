@@ -28,6 +28,15 @@ public class Comparator extends HackerRankMeta {
 		return person;
 	}
 
+	
+	private void compareToMethodJava() {
+		
+		String a = "Ajay";
+		String b = "Ram";
+		
+		System.out.println(b.compareTo(a));
+		
+	}
 
 	@Override
 	public String getURL() {
@@ -38,6 +47,7 @@ public class Comparator extends HackerRankMeta {
 	public static void main(String[] args) {
 		Comparator c = new Comparator();
 		c.simpletest();
+		c.compareToMethodJava();
 	}
 
 }
